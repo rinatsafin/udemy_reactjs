@@ -36,7 +36,8 @@ const App = () => {
           <Route path="/posts/:id/:username" component={PostItem} />
           <Route path="/posts" component={Posts} />
           <Route path="/profile" component={Profile} />
-          <Route path="/" component={Home} />
+          <Route path="/" exact component={Home} />
+          <Route render={() => <h3>Ooos 404, error: page not found.</h3>} />
         </Switch>
       </div>
     </BrowserRouter>
