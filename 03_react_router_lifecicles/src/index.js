@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Route, Link } from "react-router-dom";
+import { MemoryRouter, Route, Link } from "react-router-dom";
 
 // Components
 import Home from "./components/Home";
@@ -10,7 +10,7 @@ import PostItem from "./components/Post_item";
 
 const App = () => {
   return (
-    <HashRouter>
+    <MemoryRouter>
       <div>
         <header>
           <Link to="/">Home</Link>
@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/posts/:id/:username" component={PostItem} />
         <Route path="/profile" component={Profile} />
       </div>
-    </HashRouter>
+    </MemoryRouter>
   );
 };
 
