@@ -7,12 +7,15 @@ import Home from "./components/Home";
 import Posts from "./components/Posts";
 import Profile from "./components/Profile";
 import PostItem from "./components/Post_item";
+import LifeCycles from "./components/Life_cycles";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div>
         <header>
+          <NavLink to="/life">LifeCycles</NavLink>
+          <br />
           <Link to="/">Home</Link>
           <br />
           <NavLink
@@ -37,6 +40,7 @@ const App = () => {
           <Route path="/posts" component={Posts} />
           <Route path="/profile" component={Profile} />
           <Route path="/" exact component={Home} />
+          <Route path="/life" component={LifeCycles} />
           <Route component={Home} />
         </Switch>
       </div>
