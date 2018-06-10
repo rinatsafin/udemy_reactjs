@@ -46,18 +46,18 @@ module.exports = {
       1,
       {
         ignore: ["children"],
-        // skipUndeclared: true,
-        propTypes: {
-          children: React.PropTypes.oneOfType([
-            React.PropTypes.arrayOf(React.PropTypes.node),
-            React.PropTypes.node
-          ])
-        },
-        getDefaultProps: function() {
-          return {
-            children: null // or [] I guess
-          };
-        }
+        skipUndeclared: true
+        // propTypes: {
+        //   children: React.PropTypes.oneOfType([
+        //     React.PropTypes.arrayOf(React.PropTypes.node),
+        //     React.PropTypes.node
+        //   ])
+        // },
+        // getDefaultProps: function() {
+        //   return {
+        //     children: null // or [] I guess
+        //   };
+        // }
       }
     ],
     "comma-dangle": 0,

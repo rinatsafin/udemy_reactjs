@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Posts from "./components/Posts";
 import Profile from "./components/Profile";
+import PostItem from "./components/Post_item";
 
 const App = () => {
   return (
@@ -13,11 +14,16 @@ const App = () => {
       <div>
         <header>
           <Link to="/">Home</Link>
+          <br />
           <Link to="/posts">Posts</Link>
+          <br />
           <Link to={{ pathname: "/profile" }}>Profile</Link>
+          <hr />
         </header>
+
         <Route path="/" exact component={Home} />
-        <Route path="/posts" component={Posts} />
+        <Route path="/posts" exac component={Posts} />
+        <Route path="/posts/:id/:username" component={PostItem} />
         <Route path="/profile" component={Profile} />
       </div>
     </BrowserRouter>
