@@ -23,6 +23,14 @@ module.exports = {
         extensions: [".js", ".jsx"]
       }
     ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        components: ["Link"],
+        specialLink: ["to"],
+        aspects: ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],
     quotes: [
@@ -37,8 +45,19 @@ module.exports = {
     "react/prop-types": [
       1,
       {
-        ignore: ["children"]
-        //skipUndeclared: true
+        ignore: ["children"],
+        // skipUndeclared: true,
+        propTypes: {
+          children: React.PropTypes.oneOfType([
+            React.PropTypes.arrayOf(React.PropTypes.node),
+            React.PropTypes.node
+          ])
+        },
+        getDefaultProps: function() {
+          return {
+            children: null // or [] I guess
+          };
+        }
       }
     ],
     "comma-dangle": 0,
