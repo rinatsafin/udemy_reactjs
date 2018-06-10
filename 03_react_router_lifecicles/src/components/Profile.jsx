@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Profile = props => {
   const redir = () => {
-    return <Redirect to="/" />;
+    props.history.push("/");
   };
   return (
     <div>
